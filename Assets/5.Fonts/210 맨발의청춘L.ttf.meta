@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 99107df700313f541aab004bf95112d7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 210 Manbalchungchun
+  fontNames:
+  - 210 Manbalchungchun
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9433e81d411ea3048b77999ef6622b66, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
