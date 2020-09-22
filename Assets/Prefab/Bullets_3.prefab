@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6694657104009810793}
   - component: {fileID: 4966956266614088847}
-  - component: {fileID: 2569875873409012919}
   - component: {fileID: 901296283569526855}
   - component: {fileID: 1686229767092480454}
+  - component: {fileID: 6039673591084903780}
   m_Layer: 0
   m_Name: Bullets_3
-  m_TagString: DieObject
+  m_TagString: BadObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2569875873409012919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8494926248082737904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78dd65bcaf953ff459d0e1f0f411b384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dmg: 2
 --- !u!50 &901296283569526855
 Rigidbody2D:
   serializedVersion: 4
@@ -145,3 +132,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2515021, y: 0.26087713}
   m_EdgeRadius: 0
+--- !u!114 &6039673591084903780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8494926248082737904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b78e9278c82a443afeed0e3ebc38e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 
+  dmg: 4

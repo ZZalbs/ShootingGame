@@ -9,6 +9,7 @@ TagManager:
   - DieObject
   - Bullet
   - EnemyBullet
+  - BadObject
   layers:
   - Default
   - TransparentFX

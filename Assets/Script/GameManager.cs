@@ -200,6 +200,7 @@ public class GameManager : MonoBehaviour
         player.SetActive(false);
         yield return new WaitForSeconds(2f);
         player.transform.position = Vector3.down * 3;
+        player.GetComponent<PlayerControl>().hp = 20;
         player.SetActive(true);
         if (runningImmune == null)
         {

@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
 
     public float speed;
     public float power;
+    public int hp = 20;
     public int score = 0;
 
     Vector2 curPos, nextPos;
@@ -121,6 +122,10 @@ public class PlayerControl : MonoBehaviour
         scoreOn.text = score.ToString(); 
     }
 
+    public void CheckHp() // 피가 0 이하인지 체크 // 체력에 영향을 주는 코드에서 호출 
+    {
+        if (hp <= 0) manager.RespawnPlayer();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -142,9 +147,9 @@ public class PlayerControl : MonoBehaviour
                     break;
             }
         }
-        if (collision.gameObject.tag == "DieObject"&& !isPlayerImmune)
+        if (collision.gameObject.tag == "BadObject"&& !isPlayerImmune)
         {
-            manager.RespawnPlayer();
+            collision.gameObject.GetComponent<AffectingObject>().AffectObject(gameObject);
         }
     }
 
