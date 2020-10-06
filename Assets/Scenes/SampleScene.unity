@@ -1360,7 +1360,6 @@ GameObject:
   - component: {fileID: 914616659}
   - component: {fileID: 914616663}
   - component: {fileID: 914616664}
-  - component: {fileID: 914616665}
   m_Layer: 0
   m_Name: PlayerPlane
   m_TagString: Untagged
@@ -1468,6 +1467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   power: 2
+  hp: 20
   score: 0
   maxDelay: 0.2
   scoreOn: {fileID: 1278682592}
@@ -1518,18 +1518,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &914616665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914616658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &969423893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,16 +1966,15 @@ MonoBehaviour:
   - 
   - 
   spawnPoint:
+  - {fileID: 1637545069}
   - {fileID: 521470221}
   - {fileID: 472050166}
-  - {fileID: 1637545069}
   - {fileID: 1019844957}
   - {fileID: 655387162}
   - {fileID: 807910542}
   - {fileID: 266593111}
   - {fileID: 1547133435}
   - {fileID: 1880935253}
-  spawnDelay: 0
   nextSpawnDelay: 0
   player: {fileID: 914616658}
   life: 0
