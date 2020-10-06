@@ -1360,11 +1360,6 @@ GameObject:
   - component: {fileID: 914616659}
   - component: {fileID: 914616663}
   - component: {fileID: 914616664}
-<<<<<<< HEAD
-=======
-  - component: {fileID: 914616665}
-  - component: {fileID: 914616666}
->>>>>>> c74e7a074c9ebba9779d188cde7ccfdc8c7dafd3
   m_Layer: 0
   m_Name: PlayerPlane
   m_TagString: Untagged
@@ -1523,37 +1518,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
-<<<<<<< HEAD
-=======
---- !u!114 &914616665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914616658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &914616666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914616658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd43d54a78eaedb44b78b4a56e29d061, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStunned: 0
-  isSlowed: 0
-  SlowAmountLIst: []
-  SlowAmount: 0
->>>>>>> c74e7a074c9ebba9779d188cde7ccfdc8c7dafd3
 --- !u!1 &969423893
 GameObject:
   m_ObjectHideFlags: 0
