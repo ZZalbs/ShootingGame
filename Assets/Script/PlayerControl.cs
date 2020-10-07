@@ -147,7 +147,7 @@ public class PlayerControl : MonoBehaviour
                     break;
             }
         }
-        if (collision.gameObject.tag == "BadObject"&& !isPlayerImmune)
+        if (collision.gameObject.tag == "BadObject" && !isPlayerImmune)
         {
             collision.gameObject.GetComponent<AffectingObject>().AffectObject(gameObject);
         }

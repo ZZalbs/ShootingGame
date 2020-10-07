@@ -8,39 +8,44 @@ public class CharacterState : MonoBehaviour
     public bool isStunned;
     public bool isSlowed;
 
-    public List<float> SlowAmountLIst;
+    public List<float> SlowAmountList;
     public float SlowAmount;
 
     PlayerControl pc;
     CharacterStat cs;
+
     private void Start()
     {
         pc = GetComponent<PlayerControl>();
         cs = GetComponent<CharacterStat>();
-        StartCoroutine(CheckMaxAmount());
+    }
+
+    private void Update()
+    {
+        CheckMaxAmount();
     }
 
     //효과
-    IEnumerator AffectSlow(float amount, float duration)
+    public void AffectSlow(float amount, float duration)
+    {
+        StartCoroutine(AffectSlowCoolControl(amount, duration));
+    }
+    IEnumerator AffectSlowCoolControl(float amount, float duration)
     {
         float slowCurCool = duration;
-        SlowAmountLIst.Add(amount);
+        SlowAmountList.Add(amount);
         while(slowCurCool >= 0)
         {
             slowCurCool -= Time.deltaTime;
             yield return null;
         }
-        SlowAmountLIst.Remove(amount);
+        SlowAmountList.Remove(amount);
     }
 
-    IEnumerator CheckMaxAmount()
+    //최대 효과 적용
+    void CheckMaxAmount()
     {
-        foreach(float amount in SlowAmountLIst)
-        {
-            if (SlowAmount < amount) SlowAmount = amount;
-            yield return null;
-        }
+        SlowAmount = Mathf.Max(SlowAmountList.ToArray());
         pc.speed = cs.MoveSpeed * (SlowAmount / 100);
-        //...
     }
 }
