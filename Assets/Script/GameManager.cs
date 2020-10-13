@@ -11,9 +11,7 @@ public class GameManager : MonoBehaviour
     //유니티 배열 ,랜덤
     public string[] enemyType; // 적
     public Transform[] spawnPoint;// 위치
-    [SerializeField]
     double spawnDelay;
-    [SerializeField]
     public double nextSpawnDelay;
 
     public GameObject player;
@@ -24,10 +22,12 @@ public class GameManager : MonoBehaviour
     Enemy enemyLogic;
     Rigidbody2D rigidEnemy;
 
+    string[] fileName;
+
     //int indSpawn, indPos;
+    //스포닝 변수들
     public List<SpawnFile> spawnList;
     public int spawnIndex;
-    [SerializeField]
     public bool spawnEnd;
     string line;
 
@@ -51,18 +51,19 @@ public class GameManager : MonoBehaviour
 
         spawnList = new List<SpawnFile>();
         enemyType = new string[] { "enemyS", "enemyM", "enemyL" };
-        ReadSpawnFile();
+        fileName = new string[] { "stage 1", "stage 2" };
+        ReadSpawnFile(1);
     }
 
 
-    void ReadSpawnFile()
+    void ReadSpawnFile(int fileNum)
     {
         //초기화
         spawnList.Clear();
         spawnIndex = 0;
         spawnEnd = false;
         //텍스트파일 읽기
-        TextAsset text1 = Resources.Load("stage 1") as TextAsset;
+        TextAsset text1 = Resources.Load(fileName[fileNum]) as TextAsset;
         StringReader str = new StringReader(text1.text);
 
         while(str!=null)
@@ -81,20 +82,23 @@ public class GameManager : MonoBehaviour
         }
         //파일 닫기
         str.Close();
+        nextSpawnDelay = spawnList[0].delay;
 
         //1번 스폰 딜레이 적용
-        nextSpawnDelay = spawnList[0].delay;
+        
     }
+
+
 
     // Update is called once per frames
     void Update()
     {
+        if(spawnEnd)
+            ReadSpawnFile(Random.Range(0, 2));
         if (spawnDelay > nextSpawnDelay && !spawnEnd) // 스폰 딜레이가 일정 넘어서면 소환하기
         {
             //Debug.Log(spawnList.delay+" "+);
             Spawn();
-
-            
             spawnDelay = 0;
         }
         Reload();
