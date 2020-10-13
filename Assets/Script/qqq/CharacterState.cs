@@ -7,7 +7,6 @@ public class CharacterState : MonoBehaviour
     //적과 플레이어의 동일한 상태
     public bool isStunned;
     public bool isSlowed;
-<<<<<<< HEAD
 
     public List<float> SlowAmountList;
     public float SlowAmount;
@@ -50,6 +49,3 @@ public class CharacterState : MonoBehaviour
         pc.speed = cs.MoveSpeed * (SlowAmount / 100);
     }
 }
-=======
-}
->>>>>>> e5ca340bc0cf8c56d6a46f780c90cab3ff4817cd
