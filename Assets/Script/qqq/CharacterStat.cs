@@ -6,5 +6,6 @@ public class CharacterStat : MonoBehaviour
 {
     public float MoveSpeed;
     public float FirePower;
-    public float HealPoint;
+    public float FireSpeed;
+    public int HealPoint;
 }

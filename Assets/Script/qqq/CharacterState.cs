@@ -22,7 +22,7 @@ public class CharacterState : MonoBehaviour
 
     private void Update()
     {
-        CheckMaxAmount();
+        CheckMaxAmount(); //혹은 리스트 변경때만
     }
 
     //효과

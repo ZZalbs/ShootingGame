@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BadBullet_Slow : Bullet
 {
-    [HideInInspector]
     public new string type = "bad_bullet_slow";
 
     private void Update()

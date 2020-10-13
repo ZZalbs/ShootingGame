@@ -9,7 +9,7 @@ public class PlayerControl : MonoBehaviour
 
     public float speed;
     public float power;
-    public int hp = 20;
+    public int hp;
     public int score = 0;
 
     Vector2 curPos, nextPos;
@@ -25,12 +25,18 @@ public class PlayerControl : MonoBehaviour
 
     public GameManager manager;
     Animator anim;
+    CharacterStat cs;
 
     public bool isPlayerImmune; // 플레이어 무적체크
     void Awake()
     {
         anim = GetComponent<Animator>();
         isPlayerImmune = false;
+        cs = GetComponent<CharacterStat>();
+
+        speed = cs.MoveSpeed;
+        power = cs.FirePower;
+        hp = cs.HealPoint;
     }
 
     // Update is called once per frame
