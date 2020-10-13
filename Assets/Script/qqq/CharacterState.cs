@@ -46,6 +46,6 @@ public class CharacterState : MonoBehaviour
     void CheckMaxAmount()
     {
         SlowAmount = Mathf.Max(SlowAmountList.ToArray());
-        pc.speed = cs.MoveSpeed * (SlowAmount / 100);
+        pc.speed = cs.MoveSpeed * (1 - (SlowAmount / 100));
     }
 }

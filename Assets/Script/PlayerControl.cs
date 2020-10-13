@@ -32,11 +32,12 @@ public class PlayerControl : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         isPlayerImmune = false;
-        cs = GetComponent<CharacterStat>();
 
+        cs = GetComponent<CharacterStat>();
         speed = cs.MoveSpeed;
         power = cs.FirePower;
         hp = cs.HealPoint;
+
     }
 
     // Update is called once per frame
