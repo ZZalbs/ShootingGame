@@ -34,7 +34,7 @@ public class CharacterState : MonoBehaviour
     {
         float slowCurCool = duration;
         SlowAmountList.Add(amount);
-        while(slowCurCool >= 0)
+        while (slowCurCool >= 0)
         {
             slowCurCool -= Time.deltaTime;
             yield return null;

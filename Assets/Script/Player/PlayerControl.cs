@@ -55,37 +55,37 @@ public class PlayerControl : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
-        if ((isLeftTouch && h== -1) || (isRightTouch && h == 1))
+        if ((isLeftTouch && h == -1) || (isRightTouch && h == 1))
             h = 0;
-        if ((isUpTouch && v == 1) || (isDownTouch && v== -1))
+        if ((isUpTouch && v == 1) || (isDownTouch && v == -1))
             v = 0;
 
         nextPos = new Vector3(h, v, 0) * speed * Time.deltaTime;
 
         transform.position = curPos + nextPos;
-        
-        if(Input.GetButtonDown("Horizontal") || Input.GetButtonUp("Horizontal"))
+
+        if (Input.GetButtonDown("Horizontal") || Input.GetButtonUp("Horizontal"))
             anim.SetInteger("Hor", (int)h);
     }
     void Shoot()
     {
         if (!Input.GetKey(KeyCode.Space))
             return;
-        if (curShotDelay<maxDelay)
+        if (curShotDelay < maxDelay)
             return;
         switch (power)
         {
             case 1:
-                BulletMake(0, bulletP[0],0);
+                BulletMake(0, bulletP[0], 0);
                 break;
             case 2:
-                BulletMake(0.15f, bulletP[0],0);
-                BulletMake(-0.15f, bulletP[0],0);
+                BulletMake(0.15f, bulletP[0], 0);
+                BulletMake(-0.15f, bulletP[0], 0);
                 break;
             case 3:
-                BulletMake(0.2f, bulletP[0],0);
-                BulletMake(0, bulletP[1],0);
-                BulletMake(-0.2f, bulletP[0],0);
+                BulletMake(0.2f, bulletP[0], 0);
+                BulletMake(0, bulletP[1], 0);
+                BulletMake(-0.2f, bulletP[0], 0);
                 break;
             case 4:
                 BulletMake(0, bulletP[0], 30);
@@ -106,14 +106,14 @@ public class PlayerControl : MonoBehaviour
         }
     } // 파워 3에서 가운데가 파랗게 나가는 기능을 만들어라!
 
-    void BulletMake(float posMove,string bulletKind,float angle)
+    void BulletMake(float posMove, string bulletKind, float angle)
     {
-        Vector2 bulletPos = new Vector2(transform.position.x+posMove, transform.position.y);
+        Vector2 bulletPos = new Vector2(transform.position.x + posMove, transform.position.y);
         GameObject bullet = ObjectManager.instance.MakeObj(bulletKind);
         bullet.transform.position = bulletPos;
-        bullet.transform.Rotate(0,0,angle); // 물체 angle만큼 회전합시다
+        bullet.transform.Rotate(0, 0, angle); // 물체 angle만큼 회전합시다
         Rigidbody2D bulletRigid = bullet.GetComponent<Rigidbody2D>();
-        bulletRigid.AddForce(Quaternion.Euler(0, 0, angle) * Vector2.up * 10, ForceMode2D.Impulse); 
+        bulletRigid.AddForce(Quaternion.Euler(0, 0, angle) * Vector2.up * 10, ForceMode2D.Impulse);
         curShotDelay = 0;
     }
 
@@ -126,7 +126,7 @@ public class PlayerControl : MonoBehaviour
 
     void TextUp()
     {
-        scoreOn.text = score.ToString(); 
+        scoreOn.text = score.ToString();
     }
 
     public void CheckHp() // 피가 0 이하인지 체크 // 체력에 영향을 주는 코드에서 호출 
@@ -138,7 +138,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (collision.gameObject.tag == "Border")
         {
-            switch(collision.gameObject.name)
+            switch (collision.gameObject.name)
             {
                 case "Up":
                     isUpTouch = true;
@@ -181,10 +181,4 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
-
-
-
-
-
 }
-
