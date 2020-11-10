@@ -7,6 +7,7 @@ public class CharacterState : MonoBehaviour
     //적과 플레이어의 동일한 상태
     public bool isStunned;
     public bool isSlowed;
+    public bool isInvulnerability;
 
     public List<float> SlowAmountList;
     public float SlowAmount;

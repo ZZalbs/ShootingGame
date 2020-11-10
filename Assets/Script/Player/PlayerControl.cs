@@ -36,6 +36,7 @@ public class PlayerControl : MonoBehaviour
         cs = GetComponent<CharacterStat>();
         speed = cs.MoveSpeed;
         power = cs.FirePower;
+        maxDelay = cs.FireDelay;
         hp = cs.HealPoint;
 
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterStat : MonoBehaviour
+public class DroneStat : MonoBehaviour
 {
     public float MoveSpeed;
     public float FirePower;
