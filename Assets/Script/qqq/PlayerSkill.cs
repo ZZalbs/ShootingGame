@@ -28,6 +28,7 @@ public class PlayerSkill : MonoBehaviour
                 break;
             case "FireDelayDecrease":
                 FireDelayDecrease = level;
+                break;
         }
     }
 }
